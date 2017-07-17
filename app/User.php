@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Cklmercer\ModelSettings\HasSettings;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
     use HasSettings;
+    use HasApiTokens;
 
     // can make soft delect
     protected $dates = ['deleted_at'];
