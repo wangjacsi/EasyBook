@@ -22,3 +22,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(App\Reservation::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => 1,
+        'client_id' => 1,
+        'start_daytime' => $faker->dateTimeBetween('now', '+30 days'),
+        'end_daytime' => $faker->dateTimeBetween('+30 days', '+50 days'),
+        'title' => $faker->text,
+        'maker' => $faker->name,
+
+    ];
+});
