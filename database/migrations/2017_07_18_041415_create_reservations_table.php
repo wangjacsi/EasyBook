@@ -24,8 +24,8 @@ class CreateReservationsTable extends Migration
             $table->string('title');
             $table->text('information')->nullable();
             $table->string('maker')->nullable();
-            $table->unsignedInteger('class_id')->default(0);
-            $table->json('options')->nullable();
+            $table->unsignedInteger('member_id')->default(0);
+            $table->json('settings')->nullable();
             $table->timestamps();
         });
     }

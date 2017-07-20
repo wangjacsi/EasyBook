@@ -27,4 +27,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::middleware('auth')->get('/reservations2', 'ReservationController');
+Route::middleware('auth')->get('/reservations2', 'ReservationController@index');
+
+Route::post('/reservation/store', 'ReservationController@store');//middleware('auth')->
+Route::get('reservation', 'ReservationController@index')->name('reservation');

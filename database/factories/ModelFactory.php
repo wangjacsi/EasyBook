@@ -31,6 +31,7 @@ $factory->define(App\Reservation::class, function (Faker\Generator $faker) {
         'start_daytime' => $faker->dateTimeBetween('now', '+30 days'),
         'end_daytime' => $faker->dateTimeBetween('+30 days', '+50 days'),
         'title' => $faker->text,
+        'information' => $faker->sentence,
         'maker' => $faker->name,
 
     ];
