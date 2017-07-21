@@ -18,5 +18,7 @@ use Illuminate\Http\Request;
 });*/
 
 
-
-Route::middleware('auth:api')->get('/reservations', 'ReservationController');
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('/reservation', 'ReservationController@index');
+    Route::post('/reservation', 'ReservationController@store');
+});

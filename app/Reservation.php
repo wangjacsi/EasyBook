@@ -24,4 +24,8 @@ class Reservation extends Model
     public function users(){
         return $this->belongsTo('App\User');
     }
+
+    public function scopeLatestFirst($query){
+        return $query->orderBy('created_at', 'desc');
+    }
 }

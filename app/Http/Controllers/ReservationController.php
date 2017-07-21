@@ -8,6 +8,10 @@ use Validator;
 
 class ReservationController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function __invoke(){
         return Reservation::all();
     }
@@ -15,16 +19,16 @@ class ReservationController extends Controller
 
     public function index(Request $request){
 
-        /*echo '<pre>';
-        print_r($request->user());
-        print_r($request->user()->reservations()->with('users')->get());
+        echo '<pre>';
+        print_r(auth()->user());
+        print_r(auth()->user()->reservations()->with('users')->latestFirst()->get());
 
-        return $request->user()->reservations()->with('users')->get();
+        return auth()->user()->reservations()->with('users')->latestFirst()->get();
 
 
         echo '</pre>';
-*/
-        return view('reservation.index');/*->with(['user' => $user,
+
+        /*return view('reservation.index');*//*->with(['user' => $user,
                                                     'owner' => $owner,
                                                 'nation' => $nation['name']['common']]);*/
 
@@ -46,7 +50,7 @@ class ReservationController extends Controller
             'title' => $request->title,
             'start_daytime' => $request->start_daytime,
             'end_daytime' => $request->end_daytime,
-            'user_id' => 1,
+            'user_id' => auth()->user()->id,
             'client_id' =>1,
             'information' => $request->information,
         ]);
