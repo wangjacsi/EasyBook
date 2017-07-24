@@ -17,12 +17,12 @@ class Reservation extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'client_id', 'start_daytime', 'end_daytime',
-        'title', 'information', 'maker', 'class_id', 'settings',
+        'start_daytime', 'end_daytime',
+        'title', 'information', 'name', 'member_id', 'settings',
     ];
 
-    public function users(){
-        return $this->belongsTo('App\User');
+    public function member(){
+        return $this->belongsTo('App\Member');
     }
 
     public function scopeLatestFirst($query){

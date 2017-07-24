@@ -15,16 +15,13 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('oauth_clients')->onDelete('cascade');
+            $table->unsignedInteger('member_id');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
             $table->timestamp('start_daytime')->index();
             $table->timestamp('end_daytime')->index();
             $table->string('title');
             $table->text('information')->nullable();
-            $table->string('maker')->nullable();
-            $table->unsignedInteger('member_id')->default(0);
+            $table->string('name')->nullable();
             $table->json('settings')->nullable();
             $table->timestamps();
         });

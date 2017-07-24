@@ -65,7 +65,7 @@ class User extends Authenticatable
     /**
      * Relation functions
      */
-    public function reservations(){
-        return $this->hasMany('App\Reservation');
+    public function oauthClients(){
+        return $this->hasMany('App\OauthClient');
     }
 }

@@ -23,16 +23,33 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Member::class, function (Faker\Generator $faker) {
+    return [
+        'oauth_client_id' => 1,
+        'name' => $faker->name,
+        'description' => $faker->sentence,
+    ];
+});
+
+
 
 $factory->define(App\Reservation::class, function (Faker\Generator $faker) {
     return [
-        'user_id' => 1,
-        'client_id' => 1,
+        'member_id' => 1,
         'start_daytime' => $faker->dateTimeBetween('now', '+30 days'),
         'end_daytime' => $faker->dateTimeBetween('+30 days', '+50 days'),
-        'title' => $faker->text,
-        'information' => $faker->sentence,
-        'maker' => $faker->name,
+        'title' => $faker->sentence,
+        'information' => $faker->text,
+        'name' => $faker->name,
 
+    ];
+});
+
+
+$factory->define(App\Event::class, function (Faker\Generator $faker) {
+    return [
+        'member_id' => 1,
+        'title' => $faker->sentence,
+        'description' => $faker->text,
     ];
 });

@@ -30,7 +30,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Developer
 Route::get('/developer', 'DeveloperController@index');
 
-Route::middleware('auth')->get('/reservations2', 'ReservationController@index');
-
+// Reservation
 Route::post('/reservation/store', 'ReservationController@store');//middleware('auth')->
 Route::get('reservation', 'ReservationController@index')->name('reservation');

@@ -15,13 +15,12 @@ class CreateEventTable extends Migration
     {
         Schema::create('Events', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('oauth_client_id');
-            $table->foreign('oauth_client_id')->references('id')->on('oauth_clients')->onDelete('cascade');
+            $table->unsignedInteger('member_id');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
             $table->string('title');
             $table->text('description')->nullable();
             $table->timestamp('start_daytime')->nullable();
             $table->timestamp('end_daytime')->nullable();
-            $table->enum('active', ['active', 'inactive', 'dormant', 'delected'])->default('inactive');
             $table->json('settings');
             $table->timestamps();
         });

@@ -12,26 +12,23 @@ class ReservationController extends Controller
         $this->middleware('auth');
     }
 
-    public function __invoke(){
-        return Reservation::all();
-    }
-
-
     public function index(Request $request){
+        $clients = auth()->user()->oauthClients()->get();
 
-        echo '<pre>';
+        print_r(auth()->user()->oauthClients()->get());
+        die;
+
+        /*echo '<pre>';
         print_r(auth()->user());
         print_r(auth()->user()->reservations()->with('users')->latestFirst()->get());
 
         return auth()->user()->reservations()->with('users')->latestFirst()->get();
+        echo '</pre>';*/
 
-
-        echo '</pre>';
-
-        /*return view('reservation.index');*//*->with(['user' => $user,
+        return view('reservation.index')->with(['clients' => $clients]);
+        /*->with(['user' => $user,
                                                     'owner' => $owner,
                                                 'nation' => $nation['name']['common']]);*/
-
 
     }
 

@@ -12,9 +12,6 @@ class OauthClient extends Model
         return $this->hasMany('App\Member');
     }
 
-    // has many events
-    // OauthClient > event
-    public function events(){
-        return $this->hasMany('App\Event');
-    }
+
+
 }

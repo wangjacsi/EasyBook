@@ -11,6 +11,16 @@
 @stop
 
 @section('content')
+
+    @component('components.breadcrumb')
+        @slot('title')
+            Reservation
+        @endslot
+        <li><a href="">Home</a></li>
+        <li><a>Extra Pages</a></li>
+        <li class="active"><strong>Reservation</strong></li>
+    @endcomponent
+
     <div class="wrapper wrapper-content" id="app">
         <div class="row animated fadeInDown">
             <div class="col-lg-3">
@@ -49,6 +59,213 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <span class="text-muted small pull-right">267 Members</span>
+                        <h2>Members</h2>
+                        <p>
+                            All clients need to be verified before you can send email and set a project.
+                        </p>
+                        <div class="input-group">
+                            <input type="text" placeholder="Search client " class="input form-control">
+                            <span class="input-group-btn">
+                                    <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> Search</button>
+                            </span>
+                        </div>
+                        <div class="clients-list height300">
+                            <div class="full-height-scroll">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover">
+                                        <tbody>
+                                        <tr>
+                                            <td class="client-avatar"><img alt="image" src="img/a2.jpg"> </td>
+                                            <td><a data-toggle="tab" href="#contact-1" class="client-link">Anthony Jackson</a></td>
+                                            <td> Tellus Institute</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> gravida@rbisit.com</td>
+                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><img alt="image" src="img/a3.jpg"> </td>
+                                            <td><a data-toggle="tab" href="#contact-2" class="client-link">Rooney Lindsay</a></td>
+                                            <td>Proin Limited</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> rooney@proin.com</td>
+                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><img alt="image" src="img/a4.jpg"> </td>
+                                            <td><a data-toggle="tab" href="#contact-3" class="client-link">Lionel Mcmillan</a></td>
+                                            <td>Et Industries</td>
+                                            <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                                            <td> +432 955 908</td>
+                                            <td class="client-status"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a5.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-4" class="client-link">Edan Randall</a></td>
+                                            <td>Integer Sem Corp.</td>
+                                            <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                                            <td> +422 600 213</td>
+                                            <td class="client-status"><span class="label label-warning">Waiting</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a6.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-2" class="client-link">Jasper Carson</a></td>
+                                            <td>Mone Industries</td>
+                                            <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                                            <td> +400 468 921</td>
+                                            <td class="client-status"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a7.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-3" class="client-link">Reuben Pacheco</a></td>
+                                            <td>Magna Associates</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> pacheco@manga.com</td>
+                                            <td class="client-status"><span class="label label-info">Phoned</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a1.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-1" class="client-link">Simon Carson</a></td>
+                                            <td>Erat Corp.</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> Simon@erta.com</td>
+                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a3.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-2" class="client-link">Rooney Lindsay</a></td>
+                                            <td>Proin Limited</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> rooney@proin.com</td>
+                                            <td class="client-status"><span class="label label-warning">Waiting</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a4.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-3" class="client-link">Lionel Mcmillan</a></td>
+                                            <td>Et Industries</td>
+                                            <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                                            <td> +432 955 908</td>
+                                            <td class="client-status"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a5.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-4" class="client-link">Edan Randall</a></td>
+                                            <td>Integer Sem Corp.</td>
+                                            <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                                            <td> +422 600 213</td>
+                                            <td class="client-status"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a2.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-1" class="client-link">Anthony Jackson</a></td>
+                                            <td> Tellus Institute</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> gravida@rbisit.com</td>
+                                            <td class="client-status"><span class="label label-danger">Deleted</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a7.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-2" class="client-link">Reuben Pacheco</a></td>
+                                            <td>Magna Associates</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> pacheco@manga.com</td>
+                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a5.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-3"class="client-link">Edan Randall</a></td>
+                                            <td>Integer Sem Corp.</td>
+                                            <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                                            <td> +422 600 213</td>
+                                            <td class="client-status"><span class="label label-info">Phoned</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a6.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-4" class="client-link">Jasper Carson</a></td>
+                                            <td>Mone Industries</td>
+                                            <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                                            <td> +400 468 921</td>
+                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a7.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-2" class="client-link">Reuben Pacheco</a></td>
+                                            <td>Magna Associates</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> pacheco@manga.com</td>
+                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a1.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-1" class="client-link">Simon Carson</a></td>
+                                            <td>Erat Corp.</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> Simon@erta.com</td>
+                                            <td class="client-status"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a3.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-3" class="client-link">Rooney Lindsay</a></td>
+                                            <td>Proin Limited</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> rooney@proin.com</td>
+                                            <td class="client-status"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a4.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-4" class="client-link">Lionel Mcmillan</a></td>
+                                            <td>Et Industries</td>
+                                            <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                                            <td> +432 955 908</td>
+                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a5.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-1" class="client-link">Edan Randall</a></td>
+                                            <td>Integer Sem Corp.</td>
+                                            <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                                            <td> +422 600 213</td>
+                                            <td class="client-status"><span class="label label-info">Phoned</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a2.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-2" class="client-link">Anthony Jackson</a></td>
+                                            <td> Tellus Institute</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> gravida@rbisit.com</td>
+                                            <td class="client-status"><span class="label label-warning">Waiting</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="client-avatar"><a href=""><img alt="image" src="img/a7.jpg"></a> </td>
+                                            <td><a data-toggle="tab" href="#contact-4" class="client-link">Reuben Pacheco</a></td>
+                                            <td>Magna Associates</td>
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                                            <td> pacheco@manga.com</td>
+                                            <td class="client-status"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="ibox float-e-margins">
                     <div class="ibox-content">
                         <h2>FullCalendar</h2> is a jQuery plugin that provides a full-sized, drag & drop calendar like the one below. It uses AJAX to fetch events on-the-fly for each month and is
