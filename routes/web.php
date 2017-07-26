@@ -31,5 +31,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/developer', 'DeveloperController@index');
 
 // Reservation
-Route::post('/reservation/store', 'ReservationController@store');//middleware('auth')->
-Route::get('reservation', 'ReservationController@index')->name('reservation');
+Route::prefix('reservation')->group(function () {
+    Route::post('/store', 'ReservationController@store');
+    Route::get('/', 'ReservationController@index')->name('reservation');
+    // post -> return client information
+    Route::get('/{client_id}/{member_id}/{month}', 'ReservationController@show');
+});

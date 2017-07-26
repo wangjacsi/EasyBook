@@ -13,10 +13,17 @@ class ReservationController extends Controller
     }
 
     public function index(Request $request){
-        $clients = auth()->user()->oauthClients()->get();
+        //$clients = auth()->user()->oauthClients()->get();
+        $clients = $request->user()->oauthClients()->get();
 
-        print_r(auth()->user()->oauthClients()->get());
-        die;
+        /*echo '<pre>';
+        foreach ($clients as $key => $value) {
+            echo 'Key: '. $key.' , value: '.$value;
+            echo '<br />';
+        }
+        print_r($clients);
+        echo '</pre>';
+        die;*/
 
         /*echo '<pre>';
         print_r(auth()->user());
@@ -59,4 +66,17 @@ class ReservationController extends Controller
         //$request->user()->reservations->associate($this->reservation);
 
     }
+
+    public function show(Request $request){
+        $clients = auth()->user()->oauthClients()->get();
+
+
+
+        return view('reservation.show')->with(['clients' => $clients]);
+        /*->with(['user' => $user,
+                                                    'owner' => $owner,
+                                                'nation' => $nation['name']['common']]);*/
+
+    }
+
 }
