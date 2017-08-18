@@ -12,6 +12,8 @@ class OauthClient extends Model
         return $this->hasMany('App\Member');
     }
 
-
+    public function scopeNotRevoked($query){
+        return $query->where('revoked', '0');
+    }
 
 }

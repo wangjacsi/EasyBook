@@ -222,8 +222,8 @@
             getClients() {
                 axios.get('/oauth/clients')
                         .then(response => {
-                            console.log(response.data);
-                            //this.clients = response.data;
+                            //console.log(response.data);
+                            this.clients = response.data;
                         });
             },
 

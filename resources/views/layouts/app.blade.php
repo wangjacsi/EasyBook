@@ -12,6 +12,13 @@
     @yield('styles')
     <link rel="stylesheet" href="{{ URL::asset('css/admin.css') }}" />
 
+    <!-- Scripts -->
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
+
 </head>
 <body>
 

@@ -2439,10 +2439,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             axios.get('/oauth/clients').then(function (response) {
                 _this.clients = response.data;
             });
-            /*axios.get('/oauth/clients')
-                    .then(response => {
-                        this.clients = response.data;
-                    });*/
         },
 
 
@@ -3081,9 +3077,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
          * Get all of the OAuth clients for the user.
          */
         getClients: function getClients() {
+            var _this2 = this;
+
             axios.get('/oauth/clients').then(function (response) {
-                console.log(response.data);
-                //this.clients = response.data;
+                //console.log(response.data);
+                _this2.clients = response.data;
             });
         },
 
@@ -3128,12 +3126,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
          * Persist the client to storage using the given form.
          */
         persistClient: function persistClient(method, uri, form, modal) {
-            var _this2 = this;
+            var _this3 = this;
 
             form.errors = [];
 
             axios[method](uri, form).then(function (response) {
-                _this2.getClients();
+                _this3.getClients();
 
                 form.name = '';
                 form.redirect = '';

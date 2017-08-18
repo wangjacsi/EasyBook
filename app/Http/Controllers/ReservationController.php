@@ -14,7 +14,7 @@ class ReservationController extends Controller
 
     public function index(Request $request){
         //$clients = auth()->user()->oauthClients()->get();
-        $clients = $request->user()->oauthClients()->get();
+        $clients = $request->user()->oauthClients()->notRevoked()->get();
 
         /*echo '<pre>';
         foreach ($clients as $key => $value) {
@@ -32,7 +32,7 @@ class ReservationController extends Controller
         return auth()->user()->reservations()->with('users')->latestFirst()->get();
         echo '</pre>';*/
 
-        return view('reservation.index')->with(['clients' => $clients]);
+        return view('reservation.indexJquery')->with(['clients' => $clients]);
         /*->with(['user' => $user,
                                                     'owner' => $owner,
                                                 'nation' => $nation['name']['common']]);*/

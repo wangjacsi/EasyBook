@@ -68,4 +68,7 @@ class User extends Authenticatable
     public function oauthClients(){
         return $this->hasMany('App\OauthClient');
     }
+
+
+
 }

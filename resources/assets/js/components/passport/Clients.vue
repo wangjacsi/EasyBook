@@ -275,10 +275,6 @@
                         .then(response => {
                             this.clients = response.data;
                         });
-                /*axios.get('/oauth/clients')
-                        .then(response => {
-                            this.clients = response.data;
-                        });*/
             },
 
             /**
